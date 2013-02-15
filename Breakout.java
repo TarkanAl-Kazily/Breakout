@@ -64,22 +64,26 @@ public class Breakout extends GraphicsProgram {
 		breakoutGame();
 	}
 	
+	// Runs all of the setup programs; building the board, the bricks and the paddle.
 	private void breakoutSetup() {
-		canvasAndBoard();
-		bricks();
-		paddle();
+		canvasAndBoardSetup();
+		bricksSetup();
+		paddleSetup();
 	}
 	
-	private void canvasAndBoard() {
+	// Builds the board
+	private void canvasAndBoardSetup() {
 		createGCanvas();
 		add(new GRect(0, 0, WIDTH, HEIGHT));
 	}
 	
-	private void bricks() {
+	// Builds the bricks
+	private void bricksSetup() {
 		
 	}
 	
-	private void paddle() {
+	// Builds the paddle
+	private void paddleSetup() {
 		
 	}
 	
