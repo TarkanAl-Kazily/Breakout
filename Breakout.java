@@ -65,7 +65,21 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void breakoutSetup() {
+		canvasAndBoard();
+		bricks();
+		paddle();
+	}
+	
+	private void canvasAndBoard() {
 		createGCanvas();
+		add(new GRect(0, 0, WIDTH, HEIGHT));
+	}
+	
+	private void bricks() {
+		
+	}
+	
+	private void paddle() {
 		
 	}
 	
