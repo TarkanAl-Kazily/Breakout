@@ -66,22 +66,27 @@ public class Breakout extends GraphicsProgram {
 	
 	// Runs all of the setup programs; building the board, the bricks and the paddle.
 	private void breakoutSetup() {
-		canvasAndBoardSetup();
+		boardSetup();
 		bricksSetup();
 		paddleSetup();
 	}
 	
 	// Builds the board
-	private void canvasAndBoardSetup() {
+	private void boardSetup() {
 		add(new GRect(0, 0, WIDTH, HEIGHT));
 	}
 	
-	// Builds the bricks
+	// Builds the bricks between y = 70 and y = 70 + 36 + 80 = 186
 	private void bricksSetup() {
-		
+		GRect currentBrick;
+		for(int i = 0; i <= 9; i++) {
+			for(int j = 0; j <= 9; j++) {
+				currentBrick = new GRect()
+			}
+		}
 	}
 	
-	// Builds the paddle
+	// Builds the paddle @ (WIDTH/2 , HEIGHT - 30)
 	private void paddleSetup() {
 		
 	}
