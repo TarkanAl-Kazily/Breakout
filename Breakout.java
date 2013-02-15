@@ -73,7 +73,6 @@ public class Breakout extends GraphicsProgram {
 	
 	// Builds the board
 	private void canvasAndBoardSetup() {
-		createGCanvas();
 		add(new GRect(0, 0, WIDTH, HEIGHT));
 	}
 	
