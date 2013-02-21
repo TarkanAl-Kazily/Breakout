@@ -110,9 +110,15 @@ public class Breakout extends GraphicsProgram {
 	// Builds the paddle @ (WIDTH/2 , HEIGHT - 30)
 	private void paddleSetup() {
 		
+		
+		
+		
 	}
 	
 	private void breakoutGame() {
 		
 	}
+	
+	
+	GRect paddle;
 }
