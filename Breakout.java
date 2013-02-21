@@ -107,9 +107,9 @@ public class Breakout extends GraphicsProgram {
 		}
 	}
 	
-	// Builds the paddle @ (WIDTH/2 , HEIGHT - 30)
+	// Builds the paddle @ (((WIDTH/2) - (PADDLE_WIDTH/2) , HEIGHT - 30)
 	private void paddleSetup() {
-		
+		paddle = new GRect(((WIDTH - PADDLE_WIDTH) / 2), (HEIGHT - PADDLE_Y_OFFSET), PADDLE_WIDTH, PADDLE_HEIGHT);
 		
 		
 		
@@ -119,6 +119,6 @@ public class Breakout extends GraphicsProgram {
 		
 	}
 	
-	
+	//Paddle to be able to be referenced by each method.
 	GRect paddle;
 }
