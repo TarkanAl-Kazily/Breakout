@@ -101,6 +101,8 @@ public class Breakout extends GraphicsProgram {
 				else if (((i + 1) / 2) == 5) {
 					currentBrick.setColor(Color.CYAN);
 				}
+				currentBrick.setFilled(true);
+				add(currentBrick);
 			}
 		}
 	}
