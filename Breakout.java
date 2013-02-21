@@ -86,6 +86,21 @@ public class Breakout extends GraphicsProgram {
 				xLocation = (((BRICK_WIDTH + BRICK_SEP) * (j - 1)) + 2);
 				yLocation = (((BRICK_HEIGHT + 4) * (i - 1)) + 70);
 				currentBrick = new GRect(xLocation, yLocation, BRICK_WIDTH, BRICK_HEIGHT);
+				if (((i + 1) / 2) == 1) {
+					currentBrick.setColor(Color.RED);
+				}
+				else if (((i + 1) / 2) == 2) {
+					currentBrick.setColor(Color.ORANGE);
+				}
+				else if (((i + 1) / 2) == 3) {
+					currentBrick.setColor(Color.YELLOW);
+				}
+				else if (((i + 1) / 2) == 4) {
+					currentBrick.setColor(Color.GREEN);
+				}
+				else if (((i + 1) / 2) == 5) {
+					currentBrick.setColor(Color.CYAN);
+				}
 			}
 		}
 	}
