@@ -78,10 +78,13 @@ public class Breakout extends GraphicsProgram {
 	
 	// Builds the bricks between y = 70 and y = 70 + 36 + 80 = 186
 	private void bricksSetup() {
-		GRect currentBrick;
+		int xLocation;
+		int yLocation;
 		for(int i = 0; i <= 9; i++) {
 			for(int j = 0; j <= 9; j++) {
-				currentBrick = new GRect();
+				xLocation = ((BRICK_WIDTH + BRICK_SEP) * j);
+				yLocation = (((BRICK_HEIGHT + 4) * i) + 70);
+				add(new GRect());
 			}
 		}
 	}
