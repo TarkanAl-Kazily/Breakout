@@ -64,7 +64,7 @@ public class Breakout extends GraphicsProgram {
 		breakoutGame();
 	}
 	
-	// Runs all of the setup programs; building the board, the bricks and the paddle.
+	/** Runs all of the setup programs; building the board, the bricks and the paddle. */
 	private void breakoutSetup() {
 		boardSetup();
 		bricksSetup();
@@ -72,12 +72,12 @@ public class Breakout extends GraphicsProgram {
 		waitForClick();
 	}
 	
-	// Builds the board
+	/** Builds the board */
 	private void boardSetup() {
 		add(new GRect(0, 0, WIDTH, HEIGHT));
 	}
 	
-	// Builds the bricks between y = 70 and y = 70 + 36 + 80 = 186
+	/** Builds the bricks between y = 70 and y = 70 + 36 + 80 = 186 */
 	private void bricksSetup() {
 		int xLocation;
 		int yLocation;
@@ -108,13 +108,14 @@ public class Breakout extends GraphicsProgram {
 		}
 	}
 	
-	// Builds the paddle @ (((WIDTH/2) - (PADDLE_WIDTH/2) , HEIGHT - 30)
+	/** Builds the paddle @ (((WIDTH/2) - (PADDLE_WIDTH/2) , HEIGHT - 30) */
 	private void paddleSetup() {
 		paddle = new GRect(((WIDTH - PADDLE_WIDTH) / 2), (HEIGHT - PADDLE_Y_OFFSET), PADDLE_WIDTH, PADDLE_HEIGHT);
 		paddle.setFilled(true);
 		add(paddle);
 	}
 	
+	/** The game */
 	private void breakoutGame() {
 		GOval ball = new GOval(2 * BALL_RADIUS, 2 * BALL_RADIUS);
 		int ballXVelocity = rgen.nextInt(1,3);
@@ -124,7 +125,9 @@ public class Breakout extends GraphicsProgram {
 		
 	}
 	
-	//Paddle to be able to be referenced by each method.
+	/** The paddle object */
 	private GRect paddle;
+	
+	/** The random number generator */
 	private RandomGenerator rgen = RandomGenerator.getInstance();
 }
