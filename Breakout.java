@@ -69,6 +69,7 @@ public class Breakout extends GraphicsProgram {
 		boardSetup();
 		bricksSetup();
 		paddleSetup();
+		waitForClick();
 	}
 	
 	// Builds the board
