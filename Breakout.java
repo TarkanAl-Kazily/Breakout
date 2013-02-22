@@ -117,7 +117,6 @@ public class Breakout extends GraphicsProgram {
 	
 	/** The game */
 	private void breakoutGame() {
-		GOval ball = new GOval(2 * BALL_RADIUS, 2 * BALL_RADIUS);
 		int ballXVelocity = rgen.nextInt(1,3);
 		int ballYVelocity = rgen.nextInt(1,3);
 		if (rgen.nextBoolean(0.5)) ballXVelocity *= - 1;
@@ -126,8 +125,15 @@ public class Breakout extends GraphicsProgram {
 		ballMotion(ballXVelocity, ballYVelocity);
 	}
 	
+	private void ballMotion(int xVelocity, int yVelocity) {
+		
+	}
+	
 	/** The paddle object */
 	private GRect paddle;
+	
+	/** The ball object */
+	GOval ball = new GOval(2 * BALL_RADIUS, 2 * BALL_RADIUS);
 	
 	/** The random number generator */
 	private RandomGenerator rgen = RandomGenerator.getInstance();
