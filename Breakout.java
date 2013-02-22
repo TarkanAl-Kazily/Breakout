@@ -122,11 +122,13 @@ public class Breakout extends GraphicsProgram {
 		if (rgen.nextBoolean(0.5)) ballXVelocity *= - 1;
 		add(ball, ((WIDTH / 2) - BALL_RADIUS), ((HEIGHT / 2) - BALL_RADIUS));
 		ball.setFilled(true);
-		ballMotion(ballXVelocity, ballYVelocity);
+		while (true) {
+			ballMotion(ballXVelocity, ballYVelocity);
+		}
 	}
 	
 	private void ballMotion(int xVelocity, int yVelocity) {
-		
+		ball.move(xVelocity, yVelocity);
 	}
 	
 	/** The paddle object */
