@@ -117,23 +117,21 @@ public class Breakout extends GraphicsProgram {
 	
 	/** The game */
 	private void breakoutGame() {
-		int ballXVelocity = rgen.nextInt(1,3);
-		int ballYVelocity = rgen.nextInt(1,3);
 		if (rgen.nextBoolean(0.5)) ballXVelocity *= - 1;
 		add(ball, ((WIDTH / 2) - BALL_RADIUS), ((HEIGHT / 2) - BALL_RADIUS));
 		ball.setFilled(true);
 		while (true) {
-			ballMotion(ballXVelocity, ballYVelocity);
+			ballMotion();
 		}
 	}
 	
-	private void ballMotion(int xVelocity, int yVelocity) {
-		ball.move(xVelocity, yVelocity);
+	private void ballMotion() {
+		ball.move(ballXVelocity, ballYVelocity);
 		if ((ball.getX() <= 0) || ((ball.getX() + (2 * BALL_RADIUS)) >= WIDTH)) {
-			xVelocity *= -1;
+			ballXVelocity *= -1;
 		}
 		if ((ball.getY() <= 0) || ((ball.getY() + (2 * BALL_RADIUS)) >= HEIGHT)) {
-			yVelocity *= -1;
+			ballYVelocity *= -1;
 		}
 		pause(10);
 	}
@@ -146,4 +144,8 @@ public class Breakout extends GraphicsProgram {
 	
 	/** The random number generator */
 	private RandomGenerator rgen = RandomGenerator.getInstance();
+	
+	/** Velocity variables */
+	int ballXVelocity = rgen.nextInt(1,3);
+	int ballYVelocity = rgen.nextInt(1,3);
 }
