@@ -134,7 +134,7 @@ public class Breakout extends GraphicsProgram {
 		}
 		if ((ball.getY() <= 0) || ((ball.getY() + (2 * BALL_RADIUS)) >= HEIGHT)) {
 			yVelocity *= -1;
-		}
+		}x
 		pause(10);
 	}
 	
