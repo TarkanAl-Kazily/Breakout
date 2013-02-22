@@ -129,6 +129,9 @@ public class Breakout extends GraphicsProgram {
 	
 	private void ballMotion(int xVelocity, int yVelocity) {
 		ball.move(xVelocity, yVelocity);
+		if ((ball.getX() <= 0) || ((ball.getX() + BALL_RADIUS) >= WIDTH)) {
+			xVelocity *= -1;
+		}
 	}
 	
 	/** The paddle object */
