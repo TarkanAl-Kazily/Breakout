@@ -116,9 +116,15 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void breakoutGame() {
+		GOval ball = new GOval(2 * BALL_RADIUS, 2 * BALL_RADIUS);
+		int ballXVelocity = rgen.nextInt(1,3);
+		int ballYVelocity = rgen.nextInt(1,3);
+		if (rgen.nextBoolean(0.5)) ballXVelocity *= - 1;
+		
 		
 	}
 	
 	//Paddle to be able to be referenced by each method.
-	GRect paddle;
+	private GRect paddle;
+	private RandomGenerator rgen = RandomGenerator.getInstance();
 }
