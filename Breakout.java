@@ -121,7 +121,7 @@ public class Breakout extends GraphicsProgram {
 		int ballXVelocity = rgen.nextInt(1,3);
 		int ballYVelocity = rgen.nextInt(1,3);
 		if (rgen.nextBoolean(0.5)) ballXVelocity *= - 1;
-		
+		add(ball, (WIDTH / 2), (HEIGHT / 2));
 		
 	}
 	
