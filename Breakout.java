@@ -135,6 +135,7 @@ public class Breakout extends GraphicsProgram {
 		if ((ball.getY() <= 0) || ((ball.getY() + (2 * BALL_RADIUS)) >= HEIGHT)) {
 			yVelocity *= -1;
 		}
+		pause(10);
 	}
 	
 	/** The paddle object */
