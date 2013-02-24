@@ -120,25 +120,26 @@ public class Breakout extends GraphicsProgram {
 		if (rgen.nextBoolean(0.5)) ballXVelocity *= - 1;
 		add(ball, ((WIDTH / 2) - BALL_RADIUS), ((HEIGHT / 2) - BALL_RADIUS));
 		ball.setFilled(true);
-		while (true) {
-			ballMotion();
-		}
+		ballMotion();
 	}
 	
 	private void ballMotion() {
-		ball.move(ballXVelocity, ballYVelocity);
-		if  (ball.getY() + (2 * BALL_RADIUS)) >= HEIGHT)) {
+		while true {
+			ball.move(ballXVelocity, ballYVelocity);
+			if  (ball.getY() + (2 * BALL_RADIUS)) >= HEIGHT)) {
+				remove(ball);
 			
-		}
-		if ((ball.getX() <= 0) || ((ball.getX() + (2 * BALL_RADIUS)) >= WIDTH)) {
-			ballXVelocity *= -1;
-		}
-		checkForCollisionsX(ball, BALL_RADIUS);
-		if (ball.getY() <= 0) {
-			ballYVelocity *= -1;	
 			}
-		checkForCollisionsY(ball, BALL_RADIUS);
-		pause(10);
+			if ((ball.getX() <= 0) || ((ball.getX() + (2 * BALL_RADIUS)) >= WIDTH)) {
+				ballXVelocity *= -1;
+			}
+			checkForCollisionsX(ball, BALL_RADIUS);
+			if (ball.getY() <= 0) {
+				ballYVelocity *= -1;	
+				}
+			checkForCollisionsY(ball, BALL_RADIUS);
+			pause(10);
+		}
 	}
 	
 	private void checkForCollisionsX(GOval oval, int radius) {
