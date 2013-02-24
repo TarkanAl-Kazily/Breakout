@@ -135,7 +135,6 @@ public class Breakout extends GraphicsProgram {
 			ballYVelocity *= -1;	
 			}
 		checkForCollisionsY(ball, BALL_RADIUS);
-		}
 		pause(10);
 	}
 	
