@@ -170,10 +170,15 @@ public class Breakout extends GraphicsProgram {
 			break;
 		}
 		gobj = getElementAt(oval.getX() + (2 * radius), oval.getY() + (3 * radius / 2));
-		if ( != null) {
-		
+		if ((gobj != null) && (gobj != paddle)) {
+			remove(gobj);
+			ballXVelocity *= -1
+			break;
 		}
-		
+		if (gobj == paddle) {
+			ballXVelocity *= -1;
+			break;
+		}
 	}
 	
 	private void checkForCollisionsY(GOval oval, int radius) {
