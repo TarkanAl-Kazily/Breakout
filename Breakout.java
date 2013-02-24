@@ -61,7 +61,7 @@ public class Breakout extends GraphicsProgram {
 	/** Runs the Breakout program. */
 	public void run() {
 		breakoutSetup();
-		while (currentTurns < 0) {
+		while (currentTurns > 0) {
 			waitForClick();
 			breakoutGame();
 		}
