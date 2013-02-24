@@ -72,7 +72,7 @@ public class Breakout extends GraphicsProgram {
 	
 	/** Runs all of the setup programs; building the board, the bricks and the paddle. */
 	private void breakoutSetup() {
-		addMouseListener();
+		addMouseListener(paddleListener);
 		boardSetup();
 		bricksSetup();
 		paddleSetup();
