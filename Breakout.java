@@ -144,15 +144,18 @@ public class Breakout extends GraphicsProgram {
 			remove(gobj);
 			ballXVelocity *= -1;
 			break;
-			}
+		}
 		if (gobj == paddle) {
 			ballXVelocity *= -1;
 			break;
 		}
 		gobj = getElementAt(oval.getX(), oval.getY() + (3 * radius / 2));
 		if ((gobj != null) && (gobj != paddle)) {
-			
+			remove(gobj);
+			ballXVelocity *= -1;
+			break;
 		}
+		
 		if (getElementAt(oval.getX() + (2 * radius), oval.getY() + (radius / 2)) != null) {
 		
 		}
