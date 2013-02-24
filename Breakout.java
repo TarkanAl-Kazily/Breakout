@@ -161,12 +161,12 @@ public class Breakout extends GraphicsProgram {
 				}
 			}
 			// if there are no bricks left, break;	
-			if (numberOfBricksRemaining <= 0) break;
+			if (numberOfBricksRemaining < 0) break;
 			pause(10);
 		}
 		remove(ball);
 		currentTurns--;
-		if (numberOfBricksRemaining <= 0) return true;
+		if (numberOfBricksRemaining < 0) return true;
 		return false;
 	}
 	
