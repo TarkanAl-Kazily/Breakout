@@ -129,8 +129,8 @@ public class Breakout extends GraphicsProgram {
 		ballMotion();
 	}
 	
-	public void MouseMoved(MouseEvent mouseMovedEvent) {
-		
+	public void MouseMoved(MouseEvent mouseMovedEvent) { 
+		paddleMotion(mouseMovedEvent.getX());
 	}
 	
 	private void paddleMotion() {
@@ -154,6 +154,7 @@ public class Breakout extends GraphicsProgram {
 		currentTurns--;
 	}
 	
+
 	private void checkForCollisionsX(GOval oval, int radius) {
 		GObject gobj = getElementAt(oval.getX(), oval.getY() + (radius / 2));
 		if ((gobj != null) && (gobj != paddle)) {
@@ -201,7 +202,8 @@ public class Breakout extends GraphicsProgram {
 		}
 	}
 	
-	private void checkForCollisionsY(GOval oval, int radius) {
+	
+private void checkForCollisionsY(GOval oval, int radius) {
 		GObject gobj = getElementAt(oval.getX() + (radius / 2), oval.getY());
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
@@ -247,6 +249,7 @@ public class Breakout extends GraphicsProgram {
 			return;
 		}	
 	}
+	
 	
 	/** The paddle object */
 	private GRect paddle;
