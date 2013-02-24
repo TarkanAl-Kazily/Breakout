@@ -61,7 +61,7 @@ public class Breakout extends GraphicsProgram {
 	/** Runs the Breakout program. */
 	public void run() {
 		breakoutSetup();
-		while (currentTurns > 0) {
+		while ((currentTurns > 0) || (counter > 0)) {
 			add(new GLabel("Click to begin"), WIDTH / 2, HEIGHT / 2);
 			waitForClick();
 			remove(getElementAt(WIDTH / 2, HEIGHT / 2));
@@ -69,7 +69,8 @@ public class Breakout extends GraphicsProgram {
 			ballYVelocity = rgen.nextInt(1,3);
 			breakoutGame();
 		}
-		add(new GLabel("GAME OVER"), WIDTH / 2, HEIGHT / 2);
+		if (counter = 0) add(new GLabel("You win!"));
+		else add(new GLabel("GAME OVER"), WIDTH / 2, HEIGHT / 2);
 	}
 	
 	/** Runs all of the setup programs; building the board, the bricks and the paddle. */
