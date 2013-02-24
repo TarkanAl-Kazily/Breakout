@@ -153,7 +153,7 @@ public class Breakout extends GraphicsProgram {
 				}
 			checkForCollisionsY(ball, BALL_RADIUS);
 			// if there are no bricks left, break;
-			if (counter % counter/10 == 0) {
+			if ((counter % counter/10 == 0) && (counter < (10 * NBRICKS_PER_ROW))) {
 				ballXVelocity += (ballXVelocity) / (Math.abs(ballXVelocity));
 				ballYVelocity += (ballYVelocity) / (Math.abs(ballYVelocity));
 			}
