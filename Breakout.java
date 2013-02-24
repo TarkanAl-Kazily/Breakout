@@ -143,41 +143,41 @@ public class Breakout extends GraphicsProgram {
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballXVelocity *= -1;
-			break;
+			return;
 		}
 		if (gobj == paddle) {
 			ballXVelocity *= -1;
-			break;
+			return;
 		}
 		gobj = getElementAt(oval.getX(), oval.getY() + (3 * radius / 2));
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballXVelocity *= -1;
-			break;
+			return;
 		}
 		if (gobj == paddle) {
 			ballXVelocity *= -1;
-			break;
+			return;
 		}
 		gobj = getElementAt(oval.getX() + (2 * radius), oval.getY() + (radius / 2));
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballXVelocity *= -1;
-			break;
+			return;
 		}
 		if (gobj == paddle) {
 			ballXVelocity *= -1;
-			break;
+			return;
 		}
 		gobj = getElementAt(oval.getX() + (2 * radius), oval.getY() + (3 * radius / 2));
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballXVelocity *= -1;
-			break;
+			return;
 		}
 		if (gobj == paddle) {
 			ballXVelocity *= -1;
-			break;
+			return;
 		}
 	}
 	
@@ -186,41 +186,41 @@ public class Breakout extends GraphicsProgram {
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballYVelocity *= -1;
-			break;
+			return;
 		}
 		if (gobj == paddle) {
 			ballYVelocity *= -1;
-			break;
+			return;
 		}
 		gobj = getElementAt(oval.getX() + (3 * radius / 2), oval.getY());
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballYVelocity *= -1;
-			break;
+			return;
 		}
 		if (gobj == paddle) {
 			ballYVelocity *= -1;
-			break;
+			return;
 		}
 		gobj = getElementAt(oval.getX() + (radius / 2), oval.getY() + (2 * radius));
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballYVelocity *= -1;
-			break;
+			return;
 		}
 		if (gobj == paddle) {
 			ballYVelocity *= -1;
-			break;
+			return;
 		}
 		gobj = getElementAt(oval.getX() + (3 * radius / 2), oval.getY() + (2 * radius));
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballYVelocity *= -1;
-			break;
+			return;
 		}
 		if (gobj == paddle) {
 			ballYVelocity *= -1;
-			break;
+			return;
 		}	
 	}
 	
