@@ -65,6 +65,8 @@ public class Breakout extends GraphicsProgram {
 			add(new GLabel("Click to begin"), WIDTH / 2, HEIGHT / 2);
 			waitForClick();
 			remove(getElementAt(WIDTH / 2, HEIGHT / 2));
+			ballXVelocity = rgen.nextInt(1,3);
+			ballYVelocity = rgen.nextInt(1,3);
 			breakoutGame();
 		}
 		add(new GLabel("GAME OVER"), WIDTH / 2, HEIGHT / 2);
@@ -257,8 +259,8 @@ private void checkForCollisionsY(GOval oval, int radius) {
 	private RandomGenerator rgen = RandomGenerator.getInstance();
 	
 	/** Velocity variables */
-	int ballXVelocity = rgen.nextInt(1,3);
-	int ballYVelocity = rgen.nextInt(1,3);
+	int ballXVelocity;
+	int ballYVelocity;
 	
 	/** Counts how many bricks have been destroyed. */
 	int counter;
