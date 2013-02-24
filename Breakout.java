@@ -154,7 +154,12 @@ public class Breakout extends GraphicsProgram {
 			if (ball.getY() <= 0) {
 				ballYVelocity *= -1;	
 				}
-			checkForCollisionsY(ball, BALL_RADIUS);
+			if (checkForCollisionsY(ball, BALL_RADIUS)) {
+				if (numberOfBricksRemaining % NBRICKS_PER_ROW == 0) {
+					ballXVelocity += ballXVelocity / Math.abs(ballXVelocity);
+					ballYVelocity += ballYVelocity / Math.abs(ballYVelocity);
+				}
+			}
 			// if there are no bricks left, break;	
 			if (numberOfBricksRemaining <= 0) break;
 			pause(10);
