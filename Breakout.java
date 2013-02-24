@@ -136,6 +136,9 @@ public class Breakout extends GraphicsProgram {
 			checkForCollisionsY(ball, BALL_RADIUS);
 			pause(10);
 		}
+		remove(ball);
+		currentTurns--;
+		
 	}
 	
 	private void checkForCollisionsX(GOval oval, int radius) {
