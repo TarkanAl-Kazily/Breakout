@@ -127,11 +127,14 @@ public class Breakout extends GraphicsProgram {
 	
 	private void ballMotion() {
 		ball.move(ballXVelocity, ballYVelocity);
+		if  (ball.getY() + (2 * BALL_RADIUS)) >= HEIGHT)) {
+			
+		}
 		if ((ball.getX() <= 0) || ((ball.getX() + (2 * BALL_RADIUS)) >= WIDTH)) {
 			ballXVelocity *= -1;
 		}
 		checkForCollisionsX(ball, BALL_RADIUS);
-		if ((ball.getY() <= 0) || ((ball.getY() + (2 * BALL_RADIUS)) >= HEIGHT)) {
+		if (ball.getY() <= 0) {
 			ballYVelocity *= -1;	
 			}
 		checkForCollisionsY(ball, BALL_RADIUS);
@@ -247,4 +250,7 @@ public class Breakout extends GraphicsProgram {
 	
 	/** Counts how many bricks have been destroyed. */
 	int counter;
+	
+	/** Keeps track of how many turns the player has left */
+	int currentTurns = NTURNS;
 }
