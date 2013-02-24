@@ -65,6 +65,7 @@ public class Breakout extends GraphicsProgram {
 			waitForClick();
 			breakoutGame();
 		}
+		add(new GLabel("GAME OVER"), WIDTH / 2, HEIGHT / 2);
 	}
 	
 	/** Runs all of the setup programs; building the board, the bricks and the paddle. */
