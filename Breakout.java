@@ -165,7 +165,12 @@ public class Breakout extends GraphicsProgram {
 			ballXVelocity *= -1;
 			break;
 		}
-		if (getElementAt(oval.getX() + (2 * radius), oval.getY() + (3 * radius / 2)) != null))) {
+		if (gobj == paddle) {
+			ballXVelocity *= -1;
+			break;
+		}
+		gobj = getElementAt(oval.getX() + (2 * radius), oval.getY() + (3 * radius / 2));
+		if ( != null) {
 		
 		}
 		
