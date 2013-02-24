@@ -61,15 +61,17 @@ public class Breakout extends GraphicsProgram {
 	/** Runs the Breakout program. */
 	public void run() {
 		breakoutSetup();
-		while ((currentTurns > 0) && (counter > 0)) {
+		while (currentTurns > 0) {
 			add(new GLabel("Click to begin"), WIDTH / 2, HEIGHT / 2);
 			waitForClick();
 			remove(getElementAt(WIDTH / 2, HEIGHT / 2));
 			ballXVelocity = rgen.nextInt(1,3);
 			ballYVelocity = rgen.nextInt(1,3);
-			breakoutGame();
+			if (breakoutGame()) {
+				add(new GLabel("YOU WIN!"), WIDTH / 2, HEIGHT / 2);
+				return;
+			}
 		}
-		if (counter == 0) add(new GLabel("You win!"), WIDTH / 2, HEIGHT / 2);
 		else add(new GLabel("GAME OVER"), WIDTH / 2, HEIGHT / 2);
 	}
 	
@@ -125,11 +127,11 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	/** The game */
-	private void breakoutGame() {
+	private boolean breakoutGame() {
 		if (rgen.nextBoolean(0.5)) ballXVelocity *= - 1;
 		add(ball, ((WIDTH / 2) - BALL_RADIUS), ((HEIGHT / 2) - BALL_RADIUS));
 		ball.setFilled(true);
-		ballMotion();
+		return ballMotion();
 	}
 	
 	public void mouseMoved(MouseEvent mouseMovedEvent) { 
@@ -151,7 +153,7 @@ public class Breakout extends GraphicsProgram {
 				}
 			checkForCollisionsY(ball, BALL_RADIUS);
 			// if there are no bricks left, break;
-			if (counter <= 0) break
+			if (counter <= 0) break;
 			pause(10);
 		}
 		remove(ball);
