@@ -130,7 +130,7 @@ public class Breakout extends GraphicsProgram {
 		if ((ball.getX() <= 0) || ((ball.getX() + (2 * BALL_RADIUS)) >= WIDTH)) {
 			ballXVelocity *= -1;
 		}
-		if (((ball.getY() <= 0) || ((ball.getY() + (2 * BALL_RADIUS)) >= HEIGHT)) || checkForCollisio) {
+		if ()) {
 			ballYVelocity *= -1;
 		}
 		pause(10);
@@ -140,10 +140,11 @@ public class Breakout extends GraphicsProgram {
 		if ((getElementAt(oval.getX(), oval.getY() + (radius / 2)) != null) || ((getElementAt(oval.getX(), oval.getY() + (3 * radius / 2))) != null) || ((getElementAt(oval.getX() + (2 * radius), oval.getY() + (radius / 2)) != null) || (getElementAt(oval.getX() + (2 * radius), oval.getY() + (3 * radius / 2)) != null))) {
 			return true;
 		}
+		return false;
 	}
 	
 	private boolean checkForCollisionsY(GOval oval, int radius) {
-		if ((getElementAt(oval.getX() + (radius / 2), oval.getY()) != null) || ((getElementAt(oval.getX() + (3 * radius / 2)), oval.getY()) != null) || ((getElementAt(oval.getX() + (radius / 2), oval.getY() + (2 * radius)) != null) || (getElementAt(oval.getX() + (3 * radius / 2), oval.getY() + (2 * radius)) != null))) {
+		if ((getElementAt(oval.getX() + (radius / 2), oval.getY()) != null) || ((getElementAt(oval.getX() + (3 * radius / 2), oval.getY()) != null) || ((getElementAt(oval.getX() + (radius / 2), oval.getY() + (2 * radius)) != null) || (getElementAt(oval.getX() + (3 * radius / 2), oval.getY() + (2 * radius)) != null)))) {
 			return true;
 		}
 	}
