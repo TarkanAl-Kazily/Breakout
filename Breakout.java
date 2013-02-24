@@ -139,7 +139,7 @@ public class Breakout extends GraphicsProgram {
 		}
 	}
 	
-	private void ballMotion() {
+	private boolean ballMotion() {
 		while (ball.getY() + (2 * BALL_RADIUS) <= HEIGHT) {
 			ball.move(ballXVelocity, ballYVelocity);
 			if ((ball.getX() <= 0) || ((ball.getX() + (2 * BALL_RADIUS)) >= WIDTH)) {
@@ -150,10 +150,14 @@ public class Breakout extends GraphicsProgram {
 				ballYVelocity *= -1;	
 				}
 			checkForCollisionsY(ball, BALL_RADIUS);
+			// if there are no bricks left, break;
+			if (counter <= 0) break
 			pause(10);
 		}
 		remove(ball);
 		currentTurns--;
+		if (counter <= 0) return true;
+		return false;
 	}
 	
 
