@@ -62,7 +62,9 @@ public class Breakout extends GraphicsProgram {
 	public void run() {
 		breakoutSetup();
 		while (currentTurns > 0) {
+			add(new GLabel("Click to begin"), WIDTH / 2, HEIGHT / 2);
 			waitForClick();
+			remove(getElementAt(WIDTH / 2, HEIGHT / 2));
 			breakoutGame();
 		}
 		add(new GLabel("GAME OVER"), WIDTH / 2, HEIGHT / 2);
@@ -128,7 +130,7 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void ballMotion() {
-		while (ball.getY() + (2 * BALL_RADIUS) >= HEIGHT) {
+		while (ball.getY() + (2 * BALL_RADIUS) <= HEIGHT) {
 			ball.move(ballXVelocity, ballYVelocity);
 			if ((ball.getX() <= 0) || ((ball.getX() + (2 * BALL_RADIUS)) >= WIDTH)) {
 				ballXVelocity *= -1;
