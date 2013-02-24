@@ -61,7 +61,10 @@ public class Breakout extends GraphicsProgram {
 	/** Runs the Breakout program. */
 	public void run() {
 		breakoutSetup();
-		breakoutGame();
+		while (currentTurns < 0) {
+			waitForClick();
+			breakoutGame();
+		}
 	}
 	
 	/** Runs all of the setup programs; building the board, the bricks and the paddle. */
@@ -69,7 +72,6 @@ public class Breakout extends GraphicsProgram {
 		boardSetup();
 		bricksSetup();
 		paddleSetup();
-		waitForClick();
 	}
 	
 	/** Builds the board */
@@ -138,7 +140,6 @@ public class Breakout extends GraphicsProgram {
 		}
 		remove(ball);
 		currentTurns--;
-		
 	}
 	
 	private void checkForCollisionsX(GOval oval, int radius) {
