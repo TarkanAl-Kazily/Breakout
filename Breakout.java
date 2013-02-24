@@ -62,7 +62,7 @@ public class Breakout extends GraphicsProgram {
 	public void run() {
 		breakoutSetup();
 		while (currentTurns > 0) {
-			// waitForClick();
+			waitForClick();
 			breakoutGame();
 		}
 	}
@@ -137,7 +137,7 @@ public class Breakout extends GraphicsProgram {
 				ballYVelocity *= -1;	
 				}
 			checkForCollisionsY(ball, BALL_RADIUS);
-			pause(10);
+			pause(20);
 		}
 		remove(ball);
 		currentTurns--;
