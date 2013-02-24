@@ -155,12 +155,7 @@ public class Breakout extends GraphicsProgram {
 				ballYVelocity *= -1;	
 				}
 			checkForCollisionsY(ball, BALL_RADIUS);
-			// if there are no bricks left, break;
-			if ((numberOfBricksRemaining % NBRICKS_PER_ROW == 0) && (numberOfBricksRemaining < (10 * NBRICKS_PER_ROW))) {
-				ballXVelocity += (ballXVelocity) / (Math.abs(ballXVelocity));
-				ballYVelocity += (ballYVelocity) / (Math.abs(ballYVelocity));
-			}
-			
+			// if there are no bricks left, break;	
 			if (numberOfBricksRemaining <= 0) break;
 			pause(10);
 		}
@@ -171,51 +166,52 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 
-	private void checkForCollisionsX(GOval oval, int radius) {
+	private boolean checkForCollisionsX(GOval oval, int radius) {
 		GObject gobj = getElementAt(oval.getX(), oval.getY() + (radius / 2));
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballXVelocity *= -1;
 			numberOfBricksRemaining--;
-			return;
+			return true;
 		}
 		if (gobj == paddle) {
 			ballXVelocity *= -1;
-			return;
+			return false;
 		}
 		gobj = getElementAt(oval.getX(), oval.getY() + (3 * radius / 2));
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballXVelocity *= -1;
 			numberOfBricksRemaining--;
-			return;
+			return true;
 		}
 		if (gobj == paddle) {
 			ballXVelocity *= -1;
-			return;
+			return false;
 		}
 		gobj = getElementAt(oval.getX() + (2 * radius), oval.getY() + (radius / 2));
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballXVelocity *= -1;
 			numberOfBricksRemaining--;
-			return;
+			return true;
 		}
 		if (gobj == paddle) {
 			ballXVelocity *= -1;
-			return;
+			return false;
 		}
 		gobj = getElementAt(oval.getX() + (2 * radius), oval.getY() + (3 * radius / 2));
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballXVelocity *= -1;
 			numberOfBricksRemaining--;
-			return;
+			return true;
 		}
 		if (gobj == paddle) {
 			ballXVelocity *= -1;
-			return;
+			return false;
 		}
+		return false;
 	}
 	
 	
