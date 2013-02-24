@@ -139,9 +139,13 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void checkForCollisionsX(GOval oval, int radius) {
-		if (getElementAt(oval.getX(), oval.getY() + (radius / 2)) != null) {
-			removeElementAt(oval.getX(), oval.getY() + (radius / 2));
+		GObject gobj = getElementAt(oval.getX(), oval.getY() + (radius / 2));
+		if ((gobj != null) && (gobj != paddle)) {
+			remove(gobj);
+			}
+		if ((gobj))
 		}
+		
 		if (getElementAt(oval.getX(), oval.getY() + (3 * radius / 2))) != null) {
 		
 		}
