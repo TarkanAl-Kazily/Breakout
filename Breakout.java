@@ -267,7 +267,7 @@ public class Breakout extends GraphicsProgram {
 	int ballYVelocity;
 	
 	/** Counts how many bricks have been destroyed. */
-	int counter;
+	int counter = 100;
 	
 	/** Keeps track of how many turns the player has left */
 	int currentTurns = NTURNS;
