@@ -69,7 +69,7 @@ public class Breakout extends GraphicsProgram {
 			ballYVelocity = rgen.nextInt(1,3);
 			breakoutGame();
 		}
-		if (counter = 0) add(new GLabel("You win!"));
+		if (counter == 0) add(new GLabel("You win!"));
 		else add(new GLabel("GAME OVER"), WIDTH / 2, HEIGHT / 2);
 	}
 	
