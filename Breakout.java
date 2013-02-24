@@ -126,8 +126,11 @@ public class Breakout extends GraphicsProgram {
 		if (rgen.nextBoolean(0.5)) ballXVelocity *= - 1;
 		add(ball, ((WIDTH / 2) - BALL_RADIUS), ((HEIGHT / 2) - BALL_RADIUS));
 		ball.setFilled(true);
-		paddleMotion();
 		ballMotion();
+	}
+	
+	public void MouseMoved(MouseEvent mouseMovedEvent) {
+		
 	}
 	
 	private void paddleMotion() {
@@ -263,7 +266,4 @@ public class Breakout extends GraphicsProgram {
 	
 	/** Keeps track of how many turns the player has left */
 	int currentTurns = NTURNS;
-	
-	/** The mouse listener variable to keep track of the paddle */
-	MouseListener paddleListener;
 }
