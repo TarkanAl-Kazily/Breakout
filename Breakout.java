@@ -139,6 +139,9 @@ public class Breakout extends GraphicsProgram {
 		if (paddle.getX() + PADDLE_WIDTH >= WIDTH) {
 			paddle.setLocation(WIDTH - PADDLE_WIDTH, HEIGHT - PADDLE_Y_OFFSET);
 		}
+		if (paddle.getX() < 0) {
+			paddle.setLocation(0, HEIGHT - PADDLE_Y_OFFSET);
+		}
 	}
 	
 	private boolean ballMotion() {
