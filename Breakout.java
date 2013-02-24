@@ -85,7 +85,7 @@ public class Breakout extends GraphicsProgram {
 		for(int i = 1; i <= NBRICK_ROWS; i++) {
 			for(int j = 1; j <= NBRICKS_PER_ROW; j++) {
 				xLocation = (((BRICK_WIDTH + BRICK_SEP) * (j - 1)) + 2);
-				yLocation = (((BRICK_HEIGHT + 4) * (i - 1)) + 70);
+				yLocation = (((BRICK_HEIGHT + 4) * (i - 1)) + BRICK_Y_OFFSET);
 				currentBrick = new GRect(xLocation, yLocation, BRICK_WIDTH, BRICK_HEIGHT);
 				if (((i + 1) / 2) == 1) {
 					currentBrick.setColor(Color.RED);
