@@ -61,7 +61,7 @@ public class Breakout extends GraphicsProgram {
 	/** Runs the Breakout program. */
 	public void run() {
 		breakoutSetup();
-		while ((currentTurns > 0) || (counter > 0)) {
+		while ((currentTurns > 0) && (counter > 0)) {
 			add(new GLabel("Click to begin"), WIDTH / 2, HEIGHT / 2);
 			waitForClick();
 			remove(getElementAt(WIDTH / 2, HEIGHT / 2));
