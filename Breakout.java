@@ -247,19 +247,20 @@ public class Breakout extends GraphicsProgram {
 		}
 		if (gobj == paddle) {
 			ballYVelocity *= -1;
-			return;
+			return false;
 		}
 		gobj = getElementAt(oval.getX() + (3 * radius / 2), oval.getY() + (2 * radius));
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballYVelocity *= -1;
 			numberOfBricksRemaining--;
-			return;
+			return true;
 		}
 		if (gobj == paddle) {
 			ballYVelocity *= -1;
-			return;
+			return false;
 		}	
+		return false;
 	}
 	
 	
