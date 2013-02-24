@@ -62,7 +62,7 @@ public class Breakout extends GraphicsProgram {
 	public void run() {
 		breakoutSetup();
 		while (currentTurns > 0) {
-			waitForClick();
+			// waitForClick();
 			breakoutGame();
 		}
 	}
