@@ -124,12 +124,8 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void ballMotion() {
-		while true {
+		while (ball.getY() + (2 * BALL_RADIUS) >= HEIGHT) {
 			ball.move(ballXVelocity, ballYVelocity);
-			if  (ball.getY() + (2 * BALL_RADIUS)) >= HEIGHT)) {
-				remove(ball);
-			
-			}
 			if ((ball.getX() <= 0) || ((ball.getX() + (2 * BALL_RADIUS)) >= WIDTH)) {
 				ballXVelocity *= -1;
 			}
