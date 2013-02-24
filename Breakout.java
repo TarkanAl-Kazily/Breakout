@@ -182,9 +182,46 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void checkForCollisionsY(GOval oval, int radius) {
-		if ((getElementAt(oval.getX() + (radius / 2), oval.getY()) != null) || ((getElementAt(oval.getX() + (3 * radius / 2), oval.getY()) != null) || ((getElementAt(oval.getX() + (radius / 2), oval.getY() + (2 * radius)) != null) || (getElementAt(oval.getX() + (3 * radius / 2), oval.getY() + (2 * radius)) != null)))) {
-			
+		GObject gobj = getElementAt(oval.getX() + (radius / 2), oval.getY())
+		if ((gobj != null) && (gobj != paddle)) {
+			remove(gobj);
+			ballYVelocity *= -1;
+			break;
 		}
+		if (gobj == paddle) {
+			ballYVelocity *= -1;
+			break;
+		}
+		gobj = getElementAt(oval.getX() + (3 * radius / 2), oval.getY())
+		if ((gobj != null) && (gobj != paddle)) {
+			remove(gobj);
+			ballYVelocity *= -1;
+			break;
+		}
+		if (gobj == paddle) {
+			ballYVelocity *= -1;
+			break;
+		}
+		gobj = getElementAt(oval.getX() + (radius / 2), oval.getY() + (2 * radius))
+		if ((gobj != null) && (gobj != paddle)) {
+			remove(gobj);
+			ballYVelocity *= -1;
+			break;
+		}
+		if (gobj == paddle) {
+			ballYVelocity *= -1;
+			break;
+		}
+		gobj = getElementAt(oval.getX() + (3 * radius / 2), oval.getY() + (2 * radius))
+		if ((gobj != null) && (gobj != paddle)) {
+			remove(gobj);
+			ballYVelocity *= -1;
+			break;
+		}
+		if (gobj == paddle) {
+			ballYVelocity *= -1;
+			break;
+		}	
 	}
 	
 	/** The paddle object */
