@@ -265,5 +265,5 @@ public class Breakout extends GraphicsProgram {
 	int currentTurns = NTURNS;
 	
 	/** The mouse listener variable to keep track of the paddle */
-	MouseListener xLocation;
+	MouseListener paddleListener;
 }
