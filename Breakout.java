@@ -156,17 +156,17 @@ public class Breakout extends GraphicsProgram {
 				}
 			checkForCollisionsY(ball, BALL_RADIUS);
 			// if there are no bricks left, break;
-			if ((counter % NBRICKS_PER_ROW == 0) && (counter < (10 * NBRICKS_PER_ROW))) {
+			if ((numberOfBricksRemaining % NBRICKS_PER_ROW == 0) && (numberOfBricksRemaining < (10 * NBRICKS_PER_ROW))) {
 				ballXVelocity += (ballXVelocity) / (Math.abs(ballXVelocity));
 				ballYVelocity += (ballYVelocity) / (Math.abs(ballYVelocity));
 			}
 			
-			if (counter <= 0) break;
+			if (numberOfBricksRemaining <= 0) break;
 			pause(10);
 		}
 		remove(ball);
 		currentTurns--;
-		if (counter <= 0) return true;
+		if (numberOfBricksRemaining <= 0) return true;
 		return false;
 	}
 	
@@ -176,7 +176,7 @@ public class Breakout extends GraphicsProgram {
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballXVelocity *= -1;
-			counter++;
+			numberOfBricksRemaining--;
 			return;
 		}
 		if (gobj == paddle) {
@@ -187,7 +187,7 @@ public class Breakout extends GraphicsProgram {
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballXVelocity *= -1;
-			counter++;
+			numberOfBricksRemaining--;
 			return;
 		}
 		if (gobj == paddle) {
@@ -198,7 +198,7 @@ public class Breakout extends GraphicsProgram {
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballXVelocity *= -1;
-			counter++;
+			numberOfBricksRemaining--;
 			return;
 		}
 		if (gobj == paddle) {
@@ -209,7 +209,7 @@ public class Breakout extends GraphicsProgram {
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballXVelocity *= -1;
-			counter++;
+			numberOfBricksRemaining--;
 			return;
 		}
 		if (gobj == paddle) {
@@ -224,7 +224,7 @@ public class Breakout extends GraphicsProgram {
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballYVelocity *= -1;
-			counter++;
+			numberOfBricksRemaining--;
 			return;
 		}
 		if (gobj == paddle) {
@@ -235,7 +235,7 @@ public class Breakout extends GraphicsProgram {
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballYVelocity *= -1;
-			counter++;
+			numberOfBricksRemaining--;
 			return;
 		}
 		if (gobj == paddle) {
@@ -246,7 +246,7 @@ public class Breakout extends GraphicsProgram {
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballYVelocity *= -1;
-			counter++;
+			numberOfBricksRemaining--;
 			return;
 		}
 		if (gobj == paddle) {
@@ -257,7 +257,7 @@ public class Breakout extends GraphicsProgram {
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballYVelocity *= -1;
-			counter++;
+			numberOfBricksRemaining--;
 			return;
 		}
 		if (gobj == paddle) {
@@ -281,7 +281,7 @@ public class Breakout extends GraphicsProgram {
 	int ballYVelocity;
 	
 	/** Counts how many bricks have been destroyed. */
-	int counter = NBRICKS_PER_ROW * 10;
+	int numberOfBricksRemaining = NBRICKS_PER_ROW * 10;
 	
 	/** Keeps track of how many turns the player has left */
 	int currentTurns = NTURNS;
