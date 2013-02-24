@@ -143,6 +143,7 @@ public class Breakout extends GraphicsProgram {
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballXVelocity *= -1;
+			counter++;
 			return;
 		}
 		if (gobj == paddle) {
@@ -153,6 +154,7 @@ public class Breakout extends GraphicsProgram {
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballXVelocity *= -1;
+			counter++;
 			return;
 		}
 		if (gobj == paddle) {
@@ -163,6 +165,7 @@ public class Breakout extends GraphicsProgram {
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballXVelocity *= -1;
+			counter++;
 			return;
 		}
 		if (gobj == paddle) {
@@ -173,6 +176,7 @@ public class Breakout extends GraphicsProgram {
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballXVelocity *= -1;
+			counter++;
 			return;
 		}
 		if (gobj == paddle) {
@@ -186,6 +190,7 @@ public class Breakout extends GraphicsProgram {
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballYVelocity *= -1;
+			counter++;
 			return;
 		}
 		if (gobj == paddle) {
@@ -196,6 +201,7 @@ public class Breakout extends GraphicsProgram {
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballYVelocity *= -1;
+			counter++;
 			return;
 		}
 		if (gobj == paddle) {
@@ -206,6 +212,7 @@ public class Breakout extends GraphicsProgram {
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballYVelocity *= -1;
+			counter++;
 			return;
 		}
 		if (gobj == paddle) {
@@ -216,6 +223,7 @@ public class Breakout extends GraphicsProgram {
 		if ((gobj != null) && (gobj != paddle)) {
 			remove(gobj);
 			ballYVelocity *= -1;
+			counter++;
 			return;
 		}
 		if (gobj == paddle) {
@@ -236,4 +244,7 @@ public class Breakout extends GraphicsProgram {
 	/** Velocity variables */
 	int ballXVelocity = rgen.nextInt(1,3);
 	int ballYVelocity = rgen.nextInt(1,3);
+	
+	/** Counts how many bricks have been destroyed. */
+	int counter;
 }
