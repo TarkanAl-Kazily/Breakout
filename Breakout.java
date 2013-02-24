@@ -72,7 +72,7 @@ public class Breakout extends GraphicsProgram {
 	
 	/** Runs all of the setup programs; building the board, the bricks and the paddle. */
 	private void breakoutSetup() {
-		currentTurns = NTURNS;
+		addMouseListener();
 		boardSetup();
 		bricksSetup();
 		paddleSetup();
@@ -130,9 +130,9 @@ public class Breakout extends GraphicsProgram {
 		ballMotion();
 	}
 	
-	private 
-	
-	
+	private void paddleMotion() {
+		
+	}
 	
 	private void ballMotion() {
 		while (ball.getY() + (2 * BALL_RADIUS) <= HEIGHT) {
@@ -263,4 +263,7 @@ public class Breakout extends GraphicsProgram {
 	
 	/** Keeps track of how many turns the player has left */
 	int currentTurns = NTURNS;
+	
+	/** The mouse listener variable to keep track of the paddle */
+	MouseListener xLocation;
 }
