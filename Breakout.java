@@ -130,11 +130,19 @@ public class Breakout extends GraphicsProgram {
 		if ((ball.getX() <= 0) || ((ball.getX() + (2 * BALL_RADIUS)) >= WIDTH)) {
 			ballXVelocity *= -1;
 		}
-		if ((ball.getY() <= 0) || ((ball.getY() + (2 * BALL_RADIUS)) >= HEIGHT)) {
+		if (((ball.getY() <= 0) || ((ball.getY() + (2 * BALL_RADIUS)) >= HEIGHT)) || checkForCollisio) {
 			ballYVelocity *= -1;
 		}
 		pause(10);
 	}
+	
+	private boolean checkForCollisionsX(GOval oval, int radius) {
+		if ((getElementAt(oval.getX(), oval.getY() + (radius / 2)) != null) || (getElementAt(oval.getX(), oval.getY() + (3 * radius / 4))) != null )) {
+			
+		}
+	}
+	
+	private boolean checkForCollisionsY(GOval oval) {
 	
 	/** The paddle object */
 	private GRect paddle;
