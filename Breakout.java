@@ -294,4 +294,5 @@ public class Breakout extends GraphicsProgram {
 	
 	/** Allows for cheats */
 	int height = HEIGHT;
+	int cheat = 0;
 }
