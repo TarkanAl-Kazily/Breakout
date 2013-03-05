@@ -149,6 +149,7 @@ public class Breakout extends GraphicsProgram {
 		else if ((cheatTyped.getKeyCode() == KeyEvent.VK_KP_DOWN) && ((cheat == 2) || (cheat == 3))) cheat++;
 		else if ((cheatTyped.getKeyCode() == KeyEvent.VK_KP_LEFT) && ((cheat == 4) || (cheat == 6))) cheat++;
 		else if ((cheatTyped.getKeyCode() == KeyEvent.VK_KP_RIGHT) && ((cheat ==5) || (cheat == 7))) cheat++;
+		else if ((cheatTyped.getKeyCode() == KeyEvent.VK_B) && (cheat == 8)) cheat++;
 	}
 	
 	private boolean ballMotion() {
