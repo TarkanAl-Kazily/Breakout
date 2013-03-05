@@ -304,5 +304,5 @@ public class Breakout extends GraphicsProgram {
 	int height = HEIGHT;
 	int cheat = 0;
 	
-	GLabel bugLabel = ("" + cheat);;
+	GLabel bugLabel = (new GLabel("" + cheat));
 }
