@@ -127,7 +127,6 @@ public class Breakout extends GraphicsProgram {
 	
 	/** The game */
 	private boolean breakoutGame() {
-		add(bugLabel);
 		if (rgen.nextBoolean(0.5)) ballXVelocity *= - 1;
 		add(ball, ((WIDTH / 2) - BALL_RADIUS), ((HEIGHT / 2) - BALL_RADIUS));
 		ball.setFilled(true);
@@ -146,19 +145,11 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	public void keyTyped(KeyEvent cheatTyped) {
-		if ((cheatTyped.getKeyCode() == KeyEvent.VK_KP_UP) && ((cheat == 0) || (cheat == 1))) cheat++;
-		else if ((cheatTyped.getKeyCode() == KeyEvent.VK_KP_DOWN) && ((cheat == 2) || (cheat == 3))) cheat++;
-		else if ((cheatTyped.getKeyCode() == KeyEvent.VK_KP_LEFT) && ((cheat == 4) || (cheat == 6))) cheat++;
-		else if ((cheatTyped.getKeyCode() == KeyEvent.VK_KP_RIGHT) && ((cheat ==5) || (cheat == 7))) cheat++;
-		else if ((cheatTyped.getKeyCode() == KeyEvent.VK_B) && (cheat == 8)) cheat++;
-		else if ((cheatTyped.getKeyCode() == KeyEvent.VK_A) && (cheat == 9)) cheat++;
-		else if (cheatTyped.getKeyCode() == KeyEvent.VK_ESCAPE) cheat = 0;
+		if (cheatTyped.getKeyCode() == KeyEvent.VK_SPACE) height = 9001;
 	}
 	
 	private boolean ballMotion() {
 		while (ball.getY() + (2 * BALL_RADIUS) <= height) {
-			if (cheat == 10) height = 9001;
-			bugLabel = new GLabel("" + cheat, WIDTH/2, HEIGHT/2);
 			ball.move(ballXVelocity, ballYVelocity);
 			if ((ball.getX() <= 0) || ((ball.getX() + (2 * BALL_RADIUS)) >= WIDTH)) {
 				ballXVelocity *= -1;
@@ -304,6 +295,4 @@ public class Breakout extends GraphicsProgram {
 	/** Allows for cheats */
 	int height = HEIGHT;
 	int cheat = 0;
-	
-	GLabel bugLabel = (new GLabel("" + cheat));
 }
