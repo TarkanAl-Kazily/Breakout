@@ -157,7 +157,7 @@ public class Breakout extends GraphicsProgram {
 				ballXVelocity *= -1;
 			}
 			checkForCollisionsX(ball, BALL_RADIUS);
-			if (ball.getY() <= 0 || (ball.getY() + (2 * BALL_RADIUS) >= HEIGHT)) {
+			if (ball.getY() <= 0 || (ball.getY() + (2 * BALL_RADIUS) >= (HEIGHT + 1))) {
 				ballYVelocity *= -1;	
 				}
 			if (checkForCollisionsY(ball, BALL_RADIUS)) {
