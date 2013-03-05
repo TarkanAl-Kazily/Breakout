@@ -144,8 +144,9 @@ public class Breakout extends GraphicsProgram {
 		}
 	}
 	
-	public void keyTyped(KeyEvent spaceTyped) {
-		if (spaceTyped.getKeyChar() == ' ') height = 9001;
+	public void keyTyped(KeyEvent cheatTyped) {
+		if ((cheatTyped.getKeyCode() == KeyEvent.VK_KP_UP) && ((cheat == 0) || (cheat == 1))) cheat++;
+		else if ((cheatTyped.getKeyCode() == KeyEvent.VK_KP_DOWN) && ((cheat == 2) || (cheat == 3))) cheat++;
 	}
 	
 	private boolean ballMotion() {
