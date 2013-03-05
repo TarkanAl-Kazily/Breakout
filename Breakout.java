@@ -153,7 +153,7 @@ public class Breakout extends GraphicsProgram {
 		else if ((cheatTyped.getKeyCode() == KeyEvent.VK_A) && (cheat == 9)) cheat++;
 		else if (cheatTyped.getKeyCode() == KeyEvent.VK_ESCAPE) cheat = 0;
 		if (cheat == 10) height = 9001;
-		bugLabel = new GLabel((String) cheat, WIDTH/2, HEIGHT/2);
+		bugLabel = new GLabel("" + cheat, WIDTH/2, HEIGHT/2);
 		
 	}
 	
