@@ -127,6 +127,7 @@ public class Breakout extends GraphicsProgram {
 	
 	/** The game */
 	private boolean breakoutGame() {
+		add(bugLabel);
 		if (rgen.nextBoolean(0.5)) ballXVelocity *= - 1;
 		add(ball, ((WIDTH / 2) - BALL_RADIUS), ((HEIGHT / 2) - BALL_RADIUS));
 		ball.setFilled(true);
