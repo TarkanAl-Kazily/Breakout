@@ -147,7 +147,7 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	public void keyTyped(KeyEvent spaceTyped) {
-		
+		if (spaceTyped.getKeyChar() == ' ') height = 9001;
 	}
 	
 	private boolean ballMotion() {
