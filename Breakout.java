@@ -78,6 +78,7 @@ public class Breakout extends GraphicsProgram {
 	/** Runs all of the setup programs; building the board, the bricks and the paddle. */
 	private void breakoutSetup() {
 		addMouseListeners();
+		addKeyListeners();
 		boardSetup();
 		bricksSetup();
 		paddleSetup();
@@ -145,8 +146,12 @@ public class Breakout extends GraphicsProgram {
 		}
 	}
 	
+	public void keyTyped(KeyEvent spaceTyped) {
+		
+	}
+	
 	private boolean ballMotion() {
-		while (ball.getY() + (2 * BALL_RADIUS) <= HEIGHT) {
+		while (ball.getY() + (2 * BALL_RADIUS) <= height) {
 			ball.move(ballXVelocity, ballYVelocity);
 			if ((ball.getX() <= 0) || ((ball.getX() + (2 * BALL_RADIUS)) >= WIDTH)) {
 				ballXVelocity *= -1;
@@ -288,4 +293,7 @@ public class Breakout extends GraphicsProgram {
 	
 	/** Keeps track of how many turns the player has left */
 	int currentTurns = NTURNS;
+	
+	/** Allows for cheats */
+	int height = HEIGHT;
 }
